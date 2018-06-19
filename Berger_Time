@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n,i;
+    int count = 0, flag1=0,flag2=0;
+    int dist = INT_MAX;
+
+        while(cin>>n){
+
+		if(n==0) break;
+            char str[n];
+            cin>>str;
+        bool isZ=false;
+        for(i=0;i<n;i++){
+		 if(str[i]=='Z')
+		 {
+		  isZ=true;
+          break;
+        }
+      }
+        if(isZ)
+        cout<<"0"<<endl;
+        else{
+        for(i=0;i<n;++i){
+
+        if(str[i]=='R'){
+            if(flag2){
+           dist = min(dist,count);
+           count=1;
+           flag1=1;
+           flag2=0;
+           continue;
+          }
+        }
+        else if(str[i]=='D')
+        {
+          if(flag1)
+          {
+                dist = min(dist,count);
+
+                count=1;
+                flag1=0;
+                flag2=1;
+                continue;
+				}
+        }
+            count++;
+
+        }
+
+        cout<<dist<<endl;
+      }
+    }
+	return 0;
+}
