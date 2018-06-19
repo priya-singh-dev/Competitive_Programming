@@ -35,18 +35,18 @@ int main(){
 
    int t ;
 	for(int i=0;i<n;++i){
-		if(freq[i]>=1){
-			t = i+1;
-		}
+	    if(freq[i]>=1){
+	      t = i+1;
+	    }
 	}
 	for(int i=0;i<st.size();++i){
 		if(st[i]==t){
-			st[i] = n;
-			break;
-		}
+		st[i] = n;
+		break;
+	    }
 	}
 	for(int i=0;i<st.size();++i){
-		cout<<st[i]<<" ";
+           cout<<st[i]<<" ";
 	}
 
 	return 0;
