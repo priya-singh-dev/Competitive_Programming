@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    char str[] = "hellogeeks";
+    char rem[] = {'h', 'e' ,'l'};
+    int n= sizeof(rem)/sizeof(rem[0]);
+        int n2= sizeof(str)/sizeof(str[0]);
+    int flag=0;
+    for(int i=0; i<n2; i++)
+    {
+            for(int j=0; j<n; j++)
+            {
+               if(str[i]==rem[j]){
+               flag=1;
+                j=n-1;
+               }
+               else
+               flag=0;
+            }
+            if(flag==0)
+            cout<<str[i];
+    }
+    return 0;
+}
