@@ -1,0 +1,26 @@
+###  Delete alternate elements in an array until one element left in the array without using another array. 
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int last=0, index=1;
+  int a[] = {1,2,3};
+ int n = (sizeof(a)/(sizeof(a[1])));
+   while(true){
+       if(index==n)
+       break;
+       if(index>n)
+       {
+            index=last;
+           
+           break;
+       }
+       last=index;
+       index += index;
+   }
+   cout<<a[index-1];
+    return 0;
+}
